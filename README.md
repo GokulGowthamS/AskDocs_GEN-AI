@@ -24,7 +24,7 @@
 ### 📦 Prerequisites
 
 - Python 3.9+
-- Download the LLaMA 2 model: `llama-2-7b-chat.Q4_K_M.gguf`
+- Download the LLaMA 2 model from [HERE!](https://huggingface.co/gokulgowtham01/AskDocs_GEN-AI/upload/main/llama-2-7b-chat.Q4_K_M.gguf)  
 
 ### 📁 Folder Structure  
   
