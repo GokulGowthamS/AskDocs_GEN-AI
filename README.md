@@ -74,16 +74,20 @@ streamlit run app.py
 4.  Get answers with cited document sources.
 
 ## 📦 Dependencies  
-
+ 
 - streamlit  
-- langchain  
-- huggingface_hub  
-- faiss-cpu  
-- sentence-transformers  
+- PyMuPDF  
 - python-docx  
-- PyMuPDF (fitz)  
 - docx2txt  
-- ctransformers
+- requests  
+- numpy  
+- langchain  
+- sentence-transformers  
+- nltk  
+- rouge-score  
+- ctransformers  
+- faiss-cpu  
+- huggingface-hub  
 
 ## 📎 Notes  
 
