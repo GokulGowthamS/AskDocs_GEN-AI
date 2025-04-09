@@ -24,5 +24,20 @@
       "rouge-l": 0.039886039172734,
       "embedding_similarity": 0.6085339784622192
     }
+  },
+  {
+    "timestamp": "2025-04-09 15:10:38",
+    "question": "What is Velociraptor Scientific name?",
+    "prediction": "the scientific name of velociraptor is velociraptor mongoliensis. according to the context provided, velociraptor is a small to medium-sized dromaeosaurid theropod that lived during the late cretaceous period (~75–71 million years ago) in the gobi desert of mongolia and northern china. velociraptor were carnivorous, feeding on small reptiles, mammals, and possibly carrion, and their anatomy and preserved features continue to offer insights into the evolution of flight, intelligence, and social behavior among theropods. fossil evidence suggests that velociraptor had feathers, with quill knobs found on the forearms of some fossils, indicating a bird-like appearance. velociraptor represent a transitional species between non-avian dinosaurs and modern birds, strengthening the evolutionary link between these two groups. while often depicted hunting in packs in popular culture, there is limited direct fossil evidence to support this theory, and their brain-to-body size ratio suggests high intelligence among dinosa",
+    "ground_truth": "The Scientific name for Velociraptor is Velociraptor mongoliensis",
+    "metrics": {
+      "bleu": 0,
+      "bleu_1": 0,
+      "bleu_2": 0,
+      "rouge-1": 0.054054052872331816,
+      "rouge-2": 0.0,
+      "rouge-l": 0.054054052872331816,
+      "embedding_similarity": 0.709750235080719
+    }
   }
 ]
