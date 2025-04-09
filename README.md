@@ -30,17 +30,16 @@
   
 ```  
 project_root/
-├── gen_ai.py                           # Streamlit application
-├── models/
-│   └── llama-2-7b-chat.Q4_K_M.gguf
+├── gen_ai.py                           # Streamlit application  
 ├── images/
 │   └── freepik__adjust__9850.jpeg
 │   └── 767.jpg
-├── faiss_index/                        # Generated vector store (auto-created)
+├── faiss_index/                        # Generated vector store  (auto-created)
+├── evaluation_logs/                    # Generated json file  (auto-created)  
 ├── documents/
 │   ├── empty.txt
 │   ├── sample_doc.docx
-│   ├── sample_pdf.pdf
+│   ├── Advanced_Facts_Octopus.pdf  
 │   └── sample_txt.txt
 └── requirements.txt  
 ```
@@ -75,16 +74,20 @@ streamlit run app.py
 4.  Get answers with cited document sources.
 
 ## 📦 Dependencies  
-
+ 
 - streamlit  
-- langchain  
-- huggingface_hub  
-- faiss-cpu  
-- sentence-transformers  
+- PyMuPDF  
 - python-docx  
-- PyMuPDF (fitz)  
 - docx2txt  
-- ctransformers
+- requests  
+- numpy  
+- langchain  
+- sentence-transformers  
+- nltk  
+- rouge-score  
+- ctransformers  
+- faiss-cpu  
+- huggingface-hub  
 
 ## 📎 Notes  
 
