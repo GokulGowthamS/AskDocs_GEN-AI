@@ -209,7 +209,7 @@ def replace_with_gt_vocabulary(prediction, ground_truth):
 # ================== Evaluation & Optimization Functions ==================
 @st.cache_resource
 def load_eval_model():
-    return SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
+    return SentenceTransformer('sentence-transformers/multi-qa-mpnet-base-dot-v1')
 
 def calculate_metrics(prediction, ground_truth):
     metrics = {}
@@ -390,7 +390,10 @@ with st.sidebar:
 # =========================== Load Cached DB ============================
 if not st.session_state.documents_processed and os.path.exists("faiss_index"):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    st.session_state.vectorstore = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+    st.session_state.vectorstore = FAISS.load_local("faiss_index", embeddings.as_retreiver(
+        search_type="mmr",
+        search_kwargs={"k": 6, "fetch_k": 20, "lambda_mult": 0.5}), 
+        allow_dangerous_deserialization=True)
     st.session_state.documents_processed = True
 
 # ============================= Load LLM ===============================
