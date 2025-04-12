@@ -390,11 +390,17 @@ with st.sidebar:
 # =========================== Load Cached DB ============================
 if not st.session_state.documents_processed and os.path.exists("faiss_index"):
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    st.session_state.vectorstore = FAISS.load_local("faiss_index", embeddings.as_retreiver(
+    vectorstore = FAISS.load_local("faiss_index", embeddings, allow_dangerous_deserialization=True)
+    
+    # Set up retriever with MMR search
+    st.session_state.retriever = vectorstore.as_retriever(
         search_type="mmr",
-        search_kwargs={"k": 6, "fetch_k": 20, "lambda_mult": 0.5}), 
-        allow_dangerous_deserialization=True)
+        search_kwargs={"k": 6, "fetch_k": 20, "lambda_mult": 0.5}
+    )
+    
+    st.session_state.vectorstore = vectorstore
     st.session_state.documents_processed = True
+
 
 # ============================= Load LLM ===============================
 if st.session_state.llm is None:
